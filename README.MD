@@ -47,7 +47,7 @@ var.vm_count
 ### Customization
 
 - Set vm type with TF_VAR_vm_type environment variable. Default: `n1-standard-1`
-- Set custom network with TF_VAR_network. Default: `default`. NOTE: NETWORK SHOULD EXISTS IN GCP ACCOUNT.
+- Set custom network with TF_VAR_network. Default: `default`. NOTE: NETWORK MUST EXISTS IN GCP ACCOUNT.
 - Disable preemtible with TF_VAR_preemtible=false. Default: `true`
 
 Example:
