@@ -28,8 +28,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "vms" {
   sku                 = var.vm_type
   instances           = var.vm_count
   admin_username      = trimspace(basename(pathexpand("~")))
-
-  #custom_data = "${base64encode(file("${path.module}/script.sh"))}"
+  custom_data         = "${base64encode(file("${path.module}/script.sh"))}"
 
   admin_ssh_key {
     username   = trimspace(basename(pathexpand("~")))
