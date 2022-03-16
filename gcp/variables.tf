@@ -19,7 +19,7 @@ variable "network" {
 
 variable "vm_type" {
     description = "VM type to run"
-    default = "n1-standard-1"
+    default = "e2-micro"
 }
 
 variable "preemptible" {

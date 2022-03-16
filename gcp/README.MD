@@ -54,7 +54,7 @@ var.vm_count
 
 Example:
 ```bash
-export TF_VAR_vm_type=n1-standard-2
+export TF_VAR_vm_type=e2-micro
 export TF_VAR_network=mynet
 export TF_VAR_preemtible=false
 terraform apply
