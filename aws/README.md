@@ -1,35 +1,46 @@
 # Steps
-1. Setup AWS ACC
-2. Create IAM user with Administrator privileges
+1. Create AWS ACC
+   - Open https://go.aws/3i6FQ66
+   - Click the "Create a free account" button
+   - Enter the root user email address and aws account name.
+   - They will send a verification code to the entered email, enter it to the form
+   - Enter the root password
+   - Enter your details, choose the personal for the "How do you plan to use AWS?"
+   - Enter your credit card details
+   - Enter your phone number, and choose to send the verification code via Text message (SMS)
+   - Enter the verification code received
+   - Choose the Basic support plan
+   - Click "Go to the AWS Management Console" button
+1. Open [IAM service](https://go.aws/3waNFzA) in the AWS console and create IAM user with Administrator privileges
 <img width="1746" alt="image" src="https://user-images.githubusercontent.com/48525503/156642487-c95b4cb2-b943-4519-9aa7-d74b06297671.png">
 <img width="1050" alt="image" src="https://user-images.githubusercontent.com/48525503/156642653-de50ede1-77df-4acf-80e2-5eedb3f81f61.png">
 <img width="1025" alt="image" src="https://user-images.githubusercontent.com/48525503/156642812-943fe72b-20ba-4d7b-abf2-320a8705ee5a.png">
 
 
-3. Put this user credentials to `~/.aws/credentials` on your laptop
+1. Put this user credentials to `~/.aws/credentials` on your laptop
 ```
 [user1]
 aws_access_key_id=AKIAI44QH8DHBEXAMPLE
 aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
 ```
-3. Download Terraform - https://www.terraform.io/downloads
-4. Clone this repo
+1. Download Terraform - https://www.terraform.io/downloads
+1. Clone this repo
 ```
 git clone https://github.com/nomatterz/pnh
 cd pnh
 ```
-5. There are default variables values (`variables.tf` file and also they are listed below here, in `README.md`).  
+1. There are default variables values (`variables.tf` file and also they are listed below here, in `README.md`).  
 Also you can provide your own values and override defaults - file with custom variables shoud have extenstion `*.tfvars`   
 Repo contains sample variable file - `ireland.tfvars`.   
 Specify your profile (`user1`) to terraform `profile` variable either by overridding value in `ireland.tfvars` or in your custom variable file.
-6. Adjust ddoser launch cmd if needed in `user_data_ddoser.sh`
-7. Run
+1. Adjust ddoser launch cmd if needed in `user_data_ddoser.sh`
+1. Run
 ```
 terraform init
 terraform apply -var-file myfile.tfvars 
 ```
-9. To launch instances in another region create `*.tfvars` file with needed values (available regions can be found here - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html - `us-east-1`, `eu-central-1`, etc
-10. To destroy AWS resources
+1. To launch instances in another region create `*.tfvars` file with needed values (available regions can be found here - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html - `us-east-1`, `eu-central-1`, etc
+1. To destroy AWS resources
 ```
 terraform destroy -var-file myfile.tfvars
 ```
