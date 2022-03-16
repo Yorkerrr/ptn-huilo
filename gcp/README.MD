@@ -11,6 +11,7 @@ Instance template is configured to have startup script that will run ddos script
 - gcloud account must have `default` network
 - gcloud account must have default internet gateway rout
 - installed terraform on your workstation
+- installed gcloud-sdk cli. Please follow: https://cloud.google.com/sdk/docs/install
 
 ## Usage
 - Run `gcloud auth application-default login`
