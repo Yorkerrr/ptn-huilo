@@ -1,5 +1,5 @@
 region  = "eu-west-1"
-profile = "personal"
+profile = "vb"
 
 on_demand_desired_capacity = 0
 on_demand_instance_type    = "t3.micro"

@@ -5,7 +5,7 @@ provider "aws" {
 
 resource "aws_launch_template" "base" {
   name                                 = "base"
-  image_id                             = data.aws_ami.amazon_linux2.id
+  image_id                             = data.aws_ami.image.id
   instance_initiated_shutdown_behavior = "terminate"
   instance_type                        = var.on_demand_instance_type
   iam_instance_profile {

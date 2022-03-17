@@ -38,6 +38,9 @@ resource "google_compute_region_instance_group_manager" "ddos" {
     instance_template  = google_compute_instance_template.ddos.id
   }
   target_size  = var.vm_count
+  depends_on = [
+    google_compute_instance_template.ddos
+  ]
 }
 
 resource "google_compute_firewall" "rules" {

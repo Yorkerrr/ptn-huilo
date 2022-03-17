@@ -1,15 +1,16 @@
 #!/bin/bash
 set -x 
-sudo systemctl start amazon-ssm-agent
+systemctl start amazon-ssm-agent
 # Ubuntu 20 uses snap
-sudo snap start amazon-ssm-agent
+snap start amazon-ssm-agent
 # MAX_TIME=20
 # MIN_TIME=13
 # DIFF=$(($MAX_TIME-$MIN_TIME+1))
 # R=$(($(($RANDOM%$DIFF))+$MIN_TIME))
 # sudo shutdown +$R
-sudo apt update
-sudo apt install -y python3-pip python3-venv git htop
+apt update
+apt install -y python3-pip python3-venv git htop
+yum install -y python3-pip python3-venv git htop
 ulimit -n 100000
 git clone https://github.com/ifel/ddoser.git
 cd ddoser/

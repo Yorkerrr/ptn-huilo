@@ -9,19 +9,19 @@ data "aws_subnets" "default" {
   }
 }
 
-data "aws_ami" "amazon_linux2" {
-  most_recent = true
-  owners      = ["137112412989"] #Amazon
-  filter {
-    name = "name"
-    values = [
-      "amzn2-ami-hvm-*-x86_64-ebs"
-    ]
-  }
-  filter {
-    name = "owner-alias"
-    values = [
-      "amazon",
-    ]
-  }
+data "aws_ami" "image" {
+
+    most_recent = true
+
+    filter {
+        name   = "name"
+        values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+    }
+
+    filter {
+        name = "virtualization-type"
+        values = ["hvm"]
+    }
+
+    owners = ["099720109477"]
 }
