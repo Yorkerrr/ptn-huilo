@@ -11,8 +11,13 @@ $AzureContext = Set-AzContext -SubscriptionName $AzureContext.Subscription -Defa
 
 $vmss = Get-AzVmssVM -ResourceGroupName $resourceGroup -VMScaleSetName ${local_name}
 
+$vmids = [System.Collections.ArrayList]::new()
+
 foreach($item in $vmss.id){
   $ID = $item.Split("/")[-1]
+  $vmids.Add($ID)
   Write-Output "VM ID: $ID"
-  Remove-AzVmss -Force -ResourceGroupName $resourceGroup -VMScaleSetName "${local_name}" -InstanceId "$ID";
 }
+
+Write-Output "VM IDs array: $vmids"
+Remove-AzVmss -Force -ResourceGroupName $resourceGroup -VMScaleSetName ${local_name} -InstanceId $vmids;
