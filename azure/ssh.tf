@@ -1,5 +1,5 @@
 locals {
-  ssh_key_path = pathexpand("~/.ssh/glory_to_ukraine_azure")
+  ssh_key_path = pathexpand("~/.ssh/${local.name}")
 }
 
 resource "tls_private_key" "ssh" {
